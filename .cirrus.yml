@@ -8,9 +8,10 @@ macos_arm64_task:
     brew info --verbose boost
 
     brew install vamp-plugin-sdk
+    brew info vamp-plugin-sdk
 
     export CXXFLAGS="-std=c++11 -stdlib=libc++ -I$(brew --prefix)/include -O3 -I./vamp-plugin-sdk"
-    export LDFLAGS="-std=c++11 -stdlib=libc++ -L./vamp-plugin-sdk -lvamp-sdk -L/usr/local/lib -L$(brew --prefix)/lib"
+    export LDFLAGS="-std=c++11 -stdlib=libc++ -L./vamp-plugin-sdk -L/usr/local/lib -L$(brew --prefix)/lib -L/opt/homebrew/lib/ -lvamp-sdk"
     make -f Makefile.osxarm64
     ls -l
     otool -L pyin.dylib
