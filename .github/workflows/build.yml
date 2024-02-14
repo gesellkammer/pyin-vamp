@@ -38,7 +38,7 @@ jobs:
           ls
 
   build_linux:
-    name: Build python wheels on linux
+    name: Build on linux
     runs-on: ubuntu-latest
 
     steps:
@@ -61,7 +61,7 @@ jobs:
           path: ./pyin.so
 
   build_macos:
-    name: Build python wheels on macos
+    name: Build on macos
     runs-on: macos-latest
 
     steps:
@@ -79,6 +79,7 @@ jobs:
           make -f Makefile.osx
           ls -l
           otool -L pyin.dylib
+          ls -l /opt/homebrew/opt/vamp-plugin-sdk/lib
 
       - uses: actions/upload-artifact@v3
         with:
