@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   # Make Windows build
   windows_build:
-    name: Build plugin on on ${{ matrix.os }}
+    name: Build plugin on windows
     runs-on: Windows-latest
 
     steps:
@@ -33,7 +33,7 @@ jobs:
           ls -l
 
   build_linux:
-    name: Build python wheels on ${{ matrix.os }} 
+    name: Build python wheels on linux
     runs-on: ubuntu-latest
 
     steps:
