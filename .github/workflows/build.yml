@@ -29,6 +29,7 @@ jobs:
 
       - name: Build
         run: |
+          apt install vamp-plugin-sdk
           make -f Makefile.mingw32
           ls -l
 
