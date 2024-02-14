@@ -8,6 +8,8 @@ macos_arm64_task:
     brew info --verbose boost
 
     brew install vamp-plugin-sdk
+
+    export CXXFLAGS="${CXXFLAGS} $(brew --prefix)/include"
     make -f Makefile.osxarm64
     ls -l
     otool -L pyin.dylib
