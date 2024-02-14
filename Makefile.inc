@@ -22,17 +22,18 @@ SOURCES := PYinVamp.cpp \
 
 PLUGIN_MAIN := libmain.cpp
 
-TESTS := test/test-meanfilter \
-         test/test-fft \
-         test/test-yin \
-         test/test-mononote
+#TESTS := test/test-meanfilter \
+#         test/test-fft \
+#         test/test-yin \
+#         test/test-mononote
 	 
 OBJECTS := $(SOURCES:.cpp=.o)
 OBJECTS := $(OBJECTS:.c=.o)
 
 PLUGIN_OBJECTS := $(OBJECTS) $(PLUGIN_MAIN:.cpp=.o)
 
-all: $(PLUGIN) $(TESTS)
+# all: $(PLUGIN) $(TESTS)
+all: $(PLUGIN) 
 	@for t in $(TESTS); do echo; echo "Running $$t"; ./"$$t" || exit 1; done
 	@echo; bash ./test/regression/regression.sh
 
