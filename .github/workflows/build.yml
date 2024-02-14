@@ -46,6 +46,7 @@ jobs:
 
       - name: Build
         run: |
+          sudo apt install libboost-math-dev
           cd vamp-plugin-sdk
           ./configure --enable-programs=no
           make clean
@@ -68,6 +69,7 @@ jobs:
 
       - name: Build
         run: |
+          brew install boost
           cd vamp-plugin-sdk
           ./configure --enable-programs=no
           make clean
