@@ -5,8 +5,9 @@ macos_arm64_task:
 
   build_script: |
     brew install boost
-    brew install vamp-plugin-sdk
     brew info --verbose boost
+
+    brew install vamp-plugin-sdk
     make -f Makefile.osxarm64
     ls -l
     otool -L pyin.dylib
