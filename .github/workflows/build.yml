@@ -59,3 +59,25 @@ jobs:
         with:
           path: ./pyin.so
 
+  build_macos:
+    name: Build python wheels on macos
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          cd vamp-plugin-sdk
+          ./configure --enable-programs=no
+          make clean
+          make sdkstatic -j`nproc`
+          cd ..
+          make -f Makefile.osx -j`nproc`
+          ls -l
+          otool -L pyin.dylib
+
+      - uses: actions/upload-artifact@v3
+        with:
+          path: ./pyin.dylib
+
