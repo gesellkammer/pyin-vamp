@@ -49,8 +49,13 @@ jobs:
           cd vamp-plugin-sdk
           ./configure --enable-programs=no
           make clean
-          make sdkstatic
+          make sdkstatic -j`nproc`
           cd ..
-          make -f Makefile.linux64
+          make -f Makefile.linux64 -j`nproc`
           ls -l
+          ldd pyin.so
+
+      - uses: actions/upload-artifact@v3
+        with:
+          path: ./pyin.so
 
