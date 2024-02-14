@@ -70,16 +70,17 @@ jobs:
       - name: Build
         run: |
           brew install boost
-          brew install vamp-plugin-sdk
-          # cd vamp-plugin-sdk
-          # ./configure --enable-programs=no
-          # make clean
-          # make sdkstatic -j`nproc`
-          # cd ..
+          # brew install vamp-plugin-sdk
+          cd vamp-plugin-sdk
+          ./configure --enable-programs=no
+          make clean
+          make sdkstatic -j3
+          cd ..
           make -f Makefile.osx
           ls -l
           otool -L pyin.dylib
-          ls -l /opt/homebrew/opt/vamp-plugin-sdk/lib
+          # ls -l /opt/homebrew/opt/vamp-plugin-sdk/lib
+
 
       - uses: actions/upload-artifact@v3
         with:
