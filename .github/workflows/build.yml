@@ -46,6 +46,11 @@ jobs:
 
       - name: Build
         run: |
-          make -f Makefile.linux64
+          cd vamp-plugin-sdk
+          ./configure
+          make
+          make install
+          cd ..
+          make -f Makefile.mingw32
           ls -l
 
