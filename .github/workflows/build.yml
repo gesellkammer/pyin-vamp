@@ -48,7 +48,7 @@ jobs:
         run: |
           sudo apt install libsndfile1-dev
           cd vamp-plugin-sdk
-          ./configure --disable-programs
+          ./configure --enable-programs=no
           make clean
           make
           make install
