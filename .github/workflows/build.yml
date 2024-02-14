@@ -76,7 +76,7 @@ jobs:
           # make clean
           # make sdkstatic -j`nproc`
           # cd ..
-          make -f Makefile.osx -j`nproc`
+          make -f Makefile.osx
           ls -l
           otool -L pyin.dylib
 

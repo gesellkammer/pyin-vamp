@@ -1,9 +1,9 @@
-ARCHFLAGS := -arch x86_64 -mmacosx-version-min=10.7 -stdlib=libc++ -std=c++14 
-# CXX=g++-12
-CXX=clang++
+ARCHFLAGS := -arch x86_64 -mmacosx-version-min=10.7 -stdlib=libc++ 
+# CXX=g++
+# CXX=clang++
 
 # CFLAGS := $(ARCHFLAGS) -O3 -I../vamp-plugin-sdk -I../../vamp-plugin-sdk -I/usr/local/boost -Wall -fPIC 
-CFLAGS := $(CFLAGS) -O3 -I./vamp-plugin-sdk
+CFLAGS := $(CFLAGS) -std=c++11 -O3 -I./vamp-plugin-sdk
 
 CXXFLAGS := $(CFLAGS)
 
