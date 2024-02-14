@@ -46,7 +46,7 @@ jobs:
 
       - name: Build
         run: |
-          apt install libsndfile1-dev
+          sudo apt install libsndfile1-dev
           cd vamp-plugin-sdk
           ./configure --disable-programs
           make clean
