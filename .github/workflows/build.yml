@@ -46,11 +46,11 @@ jobs:
 
       - name: Build
         run: |
-          sudo apt install libsndfile1-dev
+          # sudo apt install libsndfile1-dev
           cd vamp-plugin-sdk
           ./configure --enable-programs=no
           make clean
-          make
+          make sdkstatic
           make install
           cd ..
           make -f Makefile.mingw32
