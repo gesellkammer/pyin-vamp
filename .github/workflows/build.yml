@@ -35,7 +35,7 @@ jobs:
           make install
           cd ..
           make -f Makefile.mingw32
-          ls -l
+          ls
 
   build_linux:
     name: Build python wheels on linux
@@ -47,7 +47,7 @@ jobs:
       - name: Build
         run: |
           cd vamp-plugin-sdk
-          ./configure
+          ./configure --disable-programs
           make
           make install
           cd ..
