@@ -3,39 +3,6 @@ name: Build
 on: [push, pull_request]
 
 jobs:
-  # Make Windows build
-  windows_build:
-    name: Build plugin on windows
-    runs-on: Windows-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      # install Visual Studio 2022 Community
-      - name: Install Visual Studio 2022
-        uses: ilammy/msvc-dev-cmd@v1
-        
-        with:
-          arch: x64
-
-      #- name: Prepare Build Loris
-      #  run: |
-      #    Write-Output "Current Location is $($PWD.Path)"
-      #    cd "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
-      #    powershell  -NoExit -Command "Import-Module ./Common7/Tools/Microsoft.VisualStudio.DevShell.dll; Enter-VsDevShell d718e166 -SkipAutomaticLocation"
-      #    cd ${{github.workspace}}
-      #    python scripts/prepare_windows_build.py
-      #    tree tmp/fftw3 /F
-
-      - name: Build
-        run: |
-          cd vamp-plugin-sdk
-          ./configure
-          make
-          make install
-          cd ..
-          make -f Makefile.mingw32
-          ls
 
   build_linux:
     name: Build on linux
