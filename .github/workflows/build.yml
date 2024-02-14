@@ -70,11 +70,12 @@ jobs:
       - name: Build
         run: |
           brew install boost
-          cd vamp-plugin-sdk
-          ./configure --enable-programs=no
-          make clean
-          make sdkstatic -j`nproc`
-          cd ..
+          brew install vamp-plugin-sdk
+          # cd vamp-plugin-sdk
+          # ./configure --enable-programs=no
+          # make clean
+          # make sdkstatic -j`nproc`
+          # cd ..
           make -f Makefile.osx -j`nproc`
           ls -l
           otool -L pyin.dylib
