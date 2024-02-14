@@ -51,6 +51,6 @@ jobs:
           make clean
           make sdkstatic
           cd ..
-          make -f Makefile.mingw32
+          make -f Makefile.linux64
           ls -l
 
