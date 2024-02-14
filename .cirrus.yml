@@ -11,5 +11,7 @@ macos_arm64_task:
     - otool -L pyin.dylib
 
   binary_artifacts:
-    path: *.dylib
+    path: ./*.dylib
+
+
 
