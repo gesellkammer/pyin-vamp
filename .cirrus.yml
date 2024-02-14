@@ -3,12 +3,12 @@ macos_arm64_task:
   macos_instance:
     image: ghcr.io/cirruslabs/macos-monterey-xcode
 
-  build_script:
-    - brew install boost
-    - brew install vamp-plugin-sdk
-    - make -f Makefile.osx
-    - ls -l
-    - otool -L pyin.dylib
+  build_script: |
+    brew install boost
+    brew install vamp-plugin-sdk
+    make -f Makefile.osxarm64
+    ls -l
+    otool -L pyin.dylib
 
   binary_artifacts:
     path: ./*.dylib
