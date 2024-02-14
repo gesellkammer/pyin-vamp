@@ -1,0 +1,15 @@
+syntax: glob
+*.o
+*.so
+*~
+*.dll
+test/test-*
+test/regression/log-*
+test/regression/obtained-*
+*.orig
+*.bak
+win32-build/release
+win32-build/x64
+*.msi
+
+
